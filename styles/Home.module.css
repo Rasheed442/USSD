@@ -1,0 +1,17 @@
+.headimg {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.top{
+    background-color: #011B33;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+}
+.test{
+    background-color: red;
+}

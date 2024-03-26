@@ -1,0 +1,168 @@
+.top {
+    padding: 90px 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.back {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.back span{
+    color: #5E5ADB;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+
+.top h2 {
+    color: #090814;
+    line-height: 32px;
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.top p {
+    color: #848D87;
+    line-height: 18px;
+    font-size: 13px;
+    font-weight: 300;
+}
+.services{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+}
+.serviceDtls{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+.serviceDtls span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    border-radius:50%;
+}
+.serviceDtls p{
+    font-size: 15px;
+    font-weight: 400;
+}
+.url{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.applicationurl{
+    border: 1px solid gainsboro;
+
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 20px;
+    border-top: 1px solid #EAECF0;
+    border-bottom: 1px solid #EAECF0;
+}
+.details span{
+    color: #667085;
+    line-height: 20px;
+    font-size: 12px;
+    font-weight: 300;
+}
+.details p{
+    color: #101828;
+    line-height: 28px;
+    font-size: 18px;
+    font-weight: 400;
+}
+.role {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+.role label{
+    color: #344054;
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+}
+.white {
+    margin: 0px 30px 30px 30px;
+    background-color: white;
+    padding: 10px 0px 20px 0px;
+    border-radius: 7px;
+}
+
+
+.container {
+    padding-top: 10px;
+    width: 70%;
+}
+
+.container2 {
+    padding: 20px 0px 20px 120px ;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.container1 {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.select select {
+    appearance: none;
+    width: 100%;
+    padding: 5px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #667085;
+}
+
+.select {
+    display: flex;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 5px;
+    align-items: center;
+    border: 1px solid gainsboro;
+}
+
+.names {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    padding-top: 50px;
+    padding-right: 50px;
+}
+
+.btn button {
+    padding: 8px;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 2%;
+    border-radius: 7px;
+
+}
+.applicationSource{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

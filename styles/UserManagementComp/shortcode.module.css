@@ -1,0 +1,87 @@
+.contain {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px 30px 20px;
+    align-items: center;
+}
+.search {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    border: 1px solid #D0D5DD;
+    padding: 6px;
+    width: 20rem;
+    border-radius: 7px;
+    color: #999999;
+}
+
+.search input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.search ::placeholder {
+    font-size: 15px;
+}
+.sort {
+    display: flex;
+}
+
+.sort button {
+    color: #344054;
+    font-size: 12px;
+    border: 1px solid gainsboro;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    justify-content: center;
+    cursor: pointer;
+    gap: 10px;
+    padding: 10px 5px 10px 5px;
+}
+.top{
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20px 10px 20px;
+    gap: 7px;
+}
+.top h1{
+   font-size: 17px;
+   font-weight: 600;
+   line-height: 20px;
+}
+.table {
+    width: 100%;
+}
+
+.table th {
+    font-weight: 500;
+    text-align: left;
+    font-size: 12px;
+    padding: 9px;
+    color: #687182;
+    background-color: #F9FAFB;
+
+}
+
+/* .table tr:nth-child(odd) {
+    background-color: #f6f6f6;
+} */
+
+.table td {
+    padding: 17px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #5A6376;
+    border: 1px solid #E9EDF5;
+    cursor: pointer;
+}
+
+.table span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #667085;
+}

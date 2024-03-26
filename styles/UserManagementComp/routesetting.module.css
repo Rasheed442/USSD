@@ -1,0 +1,100 @@
+.route{
+    padding: 20px;
+}
+.route p{
+    color: #090814;
+    line-height: 28px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+}
+.route span{
+    color: #667085;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 400;
+}
+.btnn{
+    display: flex;
+    align-items: center;
+    padding: 1px;
+    margin: 10px 20px 20px 20px;
+    justify-content: center;
+    gap: 10px;
+    width: 140px;
+    border-radius: 5px;
+    border: 1px solid #E0E0E0;
+}
+.btnn p{
+    color: #333B4A;
+    line-height: 21px;
+    font-size: 15px;
+    font-weight: 500;
+
+}
+.delievery{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    margin: 20px 20px 20px 70px;
+}
+.percentage input{
+    outline: none;
+    border: none;
+    width: 100%;
+    padding: 10px;
+        border-radius: 5px;
+}
+.percentage{
+    width: 40%;
+    display: flex;
+    border: 1px solid #D0D5DD;
+    border-radius: 5px;
+}
+.line{
+    border-top: 1px solid #E0E0E0;
+    padding: 30px 0px 15px 0px;
+    border-bottom: 1px solid #E0E0E0;
+}
+.percentage button{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 50px;
+    background-color: #D0D5DD;
+    color: #5A6376;
+}
+.top{
+    border-top: 1px solid #E0E0E0;
+}
+.table tr:nth-child(odd) {
+    background-color: #F9FAFB;
+}
+.table{
+    width: 30vw;
+    border-radius: 50%;
+}
+
+.table td{
+    padding: 20px;
+        border: 1px solid #E9EDF5;
+}
+.table tr{
+    border: 1px solid #E9EDF5;
+}
+.btn{
+    display: flex;
+    justify-content: flex-end;
+}
+.btn button{
+    color: white;
+    background-color: #5E5ADB;
+    border: none;
+    padding: 10px;
+    margin-right: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btn button:hover{
+    transition: 0.2s;
+    opacity: 0.8;
+}

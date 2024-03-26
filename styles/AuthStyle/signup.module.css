@@ -1,0 +1,163 @@
+.top {
+    background-color: #011B33;
+    height: 100vh;
+    width: 100%;
+}
+
+.container {
+     display: flex;
+    justify-content: center;
+    padding: 60px;
+    gap: 150px;
+}
+
+.atm {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.atm p {
+    font-size: 28px;
+    font-weight: 500;
+    color: white;
+}
+
+.atm span {
+    color: #E0E0E0;
+    font-size: 18px;
+    color: 500;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.white {
+    background-color: white;
+    width: 702px;
+    height: 637px;
+    overflow: hidden;
+    overflow: scroll;
+    display: flex;
+    border-radius: 20px;
+    flex-direction: column;
+    padding: 50px;
+    gap: 30px;
+}
+
+.link {
+    color: #5E5ADB;
+    font-weight: 500;
+}
+.check{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.check p{
+    color: gray;
+    line-height: 150%;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+    gap: 30px;
+}
+
+.content span {
+    display: flex;
+    gap: 5px;
+    font-size: 20px;
+}
+.content h1{
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.content p {
+    color: gray;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.info label{
+    font-size: 18px;
+}
+
+.info input {
+    height: 60px;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    outline: none;
+    padding: 20px;
+    font-size: 18px;
+}
+.info input::placeholder{
+    font-size: 18px;
+}
+
+.info ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+
+}
+.password {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.eye {
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.eye input {
+    border: none;
+    outline: none;
+    outline: none;
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+        padding-left: 20px;
+}
+
+.btn button {
+    width: 100%;
+    height: 65px;
+    background-color: #5E5ADB;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+.carousel {
+    display: flex;
+    gap: 30px;
+    width: 39%;
+    /* overflow: hidden;
+    overflow: scroll; */
+    justify-content: space-between;
+}

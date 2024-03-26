@@ -1,0 +1,37 @@
+.container{
+background: #0000005d;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    z-index:99999999;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    display:grid;
+    place-items: center;
+}
+.white{
+background: white;
+width: 400px;
+max-width: 600px;
+border-radius: 10px;
+}
+.top{
+    display: flex;
+    align-items: flex-start;
+    border-bottom:  1px solid gainsboro;
+    justify-content: space-between;
+    padding: 20px;
+}
+.main h3{
+    color: #101828;
+    line-height: 28px;
+    font-size: 20px;
+    font-weight: 400;
+}
+.main span{
+    color: #667085;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 300;
+}

@@ -1,0 +1,299 @@
+.overview {
+    padding: 30px 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.overview p {
+    color: #848D87;
+    font-size: 15px;
+    font-weight: 200;
+}
+
+.overview h1 {
+    color: #090814;
+    font-size: 33px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.date {
+    background-color: transparent;
+    border: 1px solid gray;
+    height: 40px;
+    width: 15rem;
+    color: black;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 30px;
+}
+.main button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.date {
+    position: relative;
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    color: #344054;
+}
+
+.calendar {
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+.mychart{
+    position: absolute;
+    right: 0;
+    width: 50%;
+    bottom: 0;
+}
+.template{
+    border-right: 1px solid #D5DBE5;
+    padding: 10px;
+  display: flex;
+  position: relative;
+   
+    margin: 20px 0px 20px 0px;
+  }
+.white {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.white h3 {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.white h2 {
+    font-size: 36px;
+}
+
+.white h4 {
+    font-size: 13px;
+    color: #868FA0;
+    font-weight: 400;
+}
+
+.white span {
+    color: red;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.transactions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: white;
+    margin: 0px 30px 0px 30px;
+    border-radius: 10px;
+}
+
+.merchant {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.merchant p {
+    font-size: 14px;
+    color: #909090;
+}
+
+.container {
+    padding: 30px 55px 30px 30px;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    gap: 27px;
+}
+
+.contain {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.history {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 30px 20px 30px;
+}
+
+.history select {
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    width: 10rem;
+    outline: none;
+}
+
+.merch {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.merch h1 {
+    font-weight: 400;
+}
+
+.merch p {
+    color: #909090;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    background-color: #F0F0F0;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 30px;
+}
+.btn button {
+    width: 20rem;
+    padding: 10px;
+    font-size: 14px;
+    background-color: transparent;
+    border-radius: 30px;
+    border: none;
+}
+.btn2 {
+    display: flex;
+    padding: 15px 0px 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    gap: 10px;
+    border-radius: 30px;
+}
+.btn2 button{
+    width: 162px;
+    height: 39px;
+    border: 1px solid #E0E0E0;
+    background-color: transparent;
+    border-radius: 10px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.tablecontent {
+    background-color: white;
+    margin: 0px 30px 0px 30px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.content h1 {
+    font-weight: 500;
+}
+
+.content button {
+    background-color: transparent;
+    border: 1px solid gainsboro;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 7rem;
+    border-radius: 5px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.table {
+    border-collapse: collapse;
+    font-size: 11.5px;
+    width: 100%;
+}
+
+.table th {
+    font-weight: 500;
+    text-align: left;
+    font-size: 13px;
+    padding: 18px;
+    color: #687182;
+    background-color: #F9FAFB;
+}
+
+/* .table tr:nth-child(odd) {
+    background-color: #f6f6f6;
+} */
+.table thead{
+        border-top: 1px solid gainsboro;
+        border-bottom: 1px solid gainsboro;
+}
+.table td {
+    padding: 22px;
+    font-weight: 500;
+    font-size: 14px;
+    border-bottom: 1px solid gainsboro;
+}
+
+.table span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #667085;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+}
+.row span{
+    font-size: 15px;
+    color: #687182;
+}
+.pagins{
+    display: flex;
+    gap: 7px;
+    align-items: center;
+}
+.pagins p{
+    font-size: 14px;
+    color: #687182;
+}
+.pagins select{
+        width: 48px;
+            height: 24px;
+            background-color: transparent;
+            border: 1px solid gainsboro;
+            padding: 2px;
+            border-radius: 3px;
+}
+.arrow{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.arrow button{
+    width: 28.8px;
+    height: 24px;
+    background-color: transparent;
+    border: 1px solid gainsboro;
+    border-radius: 3px;
+}

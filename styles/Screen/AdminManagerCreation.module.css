@@ -1,0 +1,58 @@
+.overlay {
+    background: #0000005d;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    z-index: 1000;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    display: grid;
+    place-items: center;
+}
+
+.white {
+    width: 50%;
+    color: black;
+    background-color: white;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    gap: 30px;
+}
+
+.white button {
+    height: 50px;
+    background-color: #5E5ADB;
+    color: white;
+    border: none;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.header input {
+    height: 50px;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid gray;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

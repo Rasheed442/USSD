@@ -1,0 +1,65 @@
+.top{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.top h1{
+    font-weight: 500;
+}
+.top span{
+    font-size: 18px;
+    font-weight:400;
+    color: rgb(176, 172, 172);
+}
+.main{
+    margin: 30px;
+    padding: 45px 30px 30px 30px;
+    background: white;
+    width: 100%;
+    height: 100%;
+}
+.passheader{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-bottom: 1px solid #EAECF0;
+    padding-bottom: 20px;
+}
+.passheader h2{
+    font-weight: 400;
+    font-size: 18px;
+}
+.passheader p{
+    font-weight: 300;
+    color: gray;
+    font-size: 16px;
+}
+.form{
+    display: flex;
+    justify-content: space-between;
+    padding-top:30px ;
+    padding-bottom:30px ;
+    padding-right:50% ;
+        border-bottom: 1px solid #EAECF0;
+}
+.form input{
+    border:1px solid gainsboro;
+    padding: 10px;
+    outline: none;
+    width: 55%;
+    height: 45px;
+    border-radius: 5px;
+}
+.btn{
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    gap: 10px;
+}
+.btn button{
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}

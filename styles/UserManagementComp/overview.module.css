@@ -1,0 +1,168 @@
+.top {
+    display: flex;
+    padding: 10px;
+    padding-left: 20px;
+    gap: 70px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #E0E0E0;
+}
+.main p {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+}
+
+.main {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+.admin {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.admin h2 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.admin p {
+    /* color: ; */
+    /* font-size: 18px; */
+    font-weight: 500;
+}
+.admin {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.admin h2 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.admin p {
+    /* color: ; */
+    /* font-size: 18px; */
+    font-weight: 500;
+}
+.infomation h2 {
+    font-size: 16px;
+    color: #909090;
+    font-weight: 500;
+}
+
+.infomation {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-right: 8rem;
+}
+.info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.info h2 {
+    font-size: 16px;
+}
+.info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.info h2 {
+    font-size: 16px;
+}
+.contain {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 30px 30px 20px;
+    align-items: center;
+}
+.search {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    border: 1px solid #D0D5DD;
+    padding: 6px;
+    width: 20rem;
+    border-radius: 7px;
+    color: #999999;
+}
+
+.search input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.search ::placeholder {
+    font-size: 15px;
+}
+.sort {
+    display: flex;
+}
+.sort button {
+    color: #344054;
+    font-size: 12px;
+    border: 1px solid gainsboro;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    justify-content: center;
+    cursor: pointer;
+    gap: 10px;
+    padding: 10px 5px 10px 5px;
+}
+.table {
+    width: 100%;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.content span {
+    color: #909090;
+    font-size: 14px;
+}
+
+.table th {
+    font-weight: 500;
+    text-align: left;
+    font-size: 14px;
+    padding: 22px;
+    color: #687182;
+    background-color: #F9FAFB;
+
+}
+
+/* .table tr:nth-child(odd) {
+    background-color: #f6f6f6;
+} */
+
+.table td {
+    padding: 22px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #5A6376;
+    border: 1px solid #E9EDF5;
+    cursor: pointer;
+}
+
+.table span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #667085;
+}

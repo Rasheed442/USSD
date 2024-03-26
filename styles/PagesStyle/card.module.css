@@ -1,0 +1,47 @@
+.header{
+    padding: 120px 30px 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #F8F8F8;
+    width: 100vw;
+    position: fixed;
+}
+.btn{
+    position: absolute;
+    right: 30px;
+    top: 120px;
+}
+.header h1{
+    font-weight: 500;
+    font-size: 25px;
+}
+.header p{
+    color: #848D87;
+    font-size: 14px;
+}
+.white{
+    background-color: white;
+    margin: 0px 30px 30px 30px;
+    padding-top: 200px;
+    border-radius: 20px;
+}
+.token{
+    display: flex;
+    gap: 40px;
+    padding: 60px 20px 0px 40px;
+    border-bottom: 1px solid #CCCCCC;
+}
+.tokenized{
+    display: flex;
+    gap: 10px;
+    align-items:center;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+.tokenized span{
+    background-color: #F0F0F0;
+    color: #63666A;
+    padding: 5px;
+    border-radius: 10px;
+}

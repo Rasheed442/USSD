@@ -1,0 +1,109 @@
+.bg {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 110px 30px 20px 30px
+}
+
+.bg button {
+    background-color: #5E5ADB;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    align-items: center;
+    gap: 5px;
+}
+
+.container {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.container h1{
+    color: #090814;
+    line-height: 38px;
+    font-size: 32px;
+    font-weight: 400;
+}
+.container p {
+    color: #848D87;
+    font-size: 13px;
+    font-weight: 300;
+}
+.white {
+    background-color: white;
+    margin: 0px 30px 30px 30px;
+    padding: 20px 0px 30px 0px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px #6362621A;
+}
+.main {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 20px 20px;
+}
+.search {
+    display: flex;
+    border: 1px solid gainsboro;
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+    gap: 5px;
+    width: 30vw;
+    font-size: 15px;
+    color: #999999;
+    border-radius: 5px;
+}
+
+.search ::placeholder {
+    color: #999999;
+    font-size: 15px;
+}
+
+.search input {
+    border: none;
+    width: 100%;
+    height: 20px;
+    outline: none;
+}
+.table {
+    border-collapse: collapse;
+    font-size: 11.5px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.table th {
+    font-weight: 600;
+    text-align: left;
+    font-size: 11px;
+    border: 1px solid gainsboro;
+    padding: 10px;
+    color: #687182;
+    
+    background-color: #F9FAFB;
+
+}
+
+/* .table tr:nth-child(odd) {
+    background-color: #f6f6f6;
+} */
+
+.table td {
+    padding: 10px;
+    font-weight: 500;
+    text-align: left;
+    font-size: 12px;
+    color: #5A6376;
+    border: 1px solid gainsboro;
+}
+
+.table span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #667085;
+}

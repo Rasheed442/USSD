@@ -1,0 +1,340 @@
+.bg {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    align-items:center;
+    padding-top: 100px;
+}
+.btn button{
+    border-radius: 6px;
+    padding: 10px;
+   font-size: 16px;
+   display: flex;
+   background-color: white;
+   align-items:center ;
+   justify-content: center;
+   gap: 8px;
+   cursor: pointer;
+   color: #464F60;
+}
+.btn{
+    display: flex;
+    gap: 20px;
+}
+.head {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.overviewsetting{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 150px 20px 20px;
+    background-color: white;
+    border-bottom:  1px solid gainsboro;
+}
+.overviewsetting p{
+    color: #667085;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 6px;
+}
+.head h1 {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 20px;
+    font-size: 20px;
+}
+
+.head span {
+    background-color: #ECECF4;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 4px 8px 4px 8px;
+    border-radius: 5px;
+    color: #5E5ADB;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.container p {
+    color: #848D87;
+    font-size: 15px;
+    font-weight: 500;
+}
+.ww{
+    overflow: hidden;
+}
+.white {
+    background-color: white;
+    margin: 0px 30px 30px 30px;
+    padding: 20px 0px 30px 0px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.top{
+    display: flex;
+    padding: 10px;
+    padding-left: 20px;
+    gap: 70px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-bottom:  1px solid #E0E0E0;
+}
+.info{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.info h2{
+    font-size:16px;
+}
+.name{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.name h2{
+    line-height: 20px;
+}
+.name span{
+    font-size: 12px;
+    font-weight: 500;
+}
+.name p{
+    background-color: #5E5ADB;
+    color: white;
+    border-radius: 5px;
+    padding: 4px;
+    font-size: 13px;
+    text-align: center;
+   
+}
+.main p{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+}
+.main{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+.infomation h2{
+    font-size: 16px;
+    color: #909090;
+    font-weight: 500;
+} 
+.infomation{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-right: 8rem;
+}
+
+.admin{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.admin h2{
+    font-size: 24px;
+    font-weight: 500;
+}
+.admin p{
+    /* color: ; */
+    /* font-size: 18px; */
+    font-weight: 500;
+}
+
+.contain {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 30px 30px 20px;
+    align-items: center;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    border: 1px solid #D0D5DD;
+    padding: 6px;
+    width: 20rem;
+    border-radius: 7px;
+    color: #999999;
+}
+
+.search input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.search ::placeholder {
+    font-size: 15px;
+}
+.calendar{
+    position: absolute;
+    right: 0;
+}
+.bar{
+    background-color: #F5F5F5;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    border-radius:5px;
+}
+.sort {
+    display: flex;
+}
+
+
+
+
+.sort button {
+    color: #344054;
+    font-size: 12px;
+    border: 1px solid gainsboro;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-weight:500 ;
+    justify-content: center;
+    cursor: pointer;
+    gap: 10px;
+    padding: 10px 5px 10px 5px;
+}
+.gridout{
+    padding: 0px 30px 30px 30px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+.netflix img{
+    width: 100%;
+}
+.merchant{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #E0E0E0;
+    border-radius:10px ;
+}
+.merchant img{
+    border-radius: 10px 10px 0px 0px;
+}
+.merchant p{
+    font-size: 18px;
+    color: #333B4A;
+}
+.merchant span{
+    font-size: 14px;
+    font-weight: 400;
+    color: #5A6376;
+}
+.data{
+    padding: 0px 20px 20px 20px; 
+     display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+.data p{
+    font-size: 18px;
+}
+.data span{
+    font-size: 14px;
+}
+/* .netflix{
+    background-color: black;
+} */
+.table{
+    width: 100%;
+}
+.table th {
+    font-weight: 500;
+    text-align: left;
+    font-size: 14px;
+    padding: 22px;
+    color: #687182;
+    background-color: #F9FAFB;
+
+}
+
+/* .table tr:nth-child(odd) {
+    background-color: #f6f6f6;
+} */
+
+.table td {
+    padding: 22px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #5A6376;
+    border: 1px solid #E9EDF5;
+    cursor: pointer;
+}
+
+.table span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #667085;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+.row span {
+    font-size: 15px;
+    color: #687182;
+}
+
+.pagins {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+}
+
+.pagins p {
+    font-size: 14px;
+    color: #687182;
+}
+
+.pagins select {
+    width: 48px;
+    height: 24px;
+    background-color: transparent;
+    border: 1px solid gainsboro;
+    padding: 2px;
+    border-radius: 3px;
+}
+
+.arrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.arrow button {
+    width: 28.8px;
+    height: 24px;
+    background-color: transparent;
+    border: 1px solid gainsboro;
+    border-radius: 3px;
+}

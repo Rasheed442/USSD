@@ -1,0 +1,9 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="39.8247" y1="8.5" x2="39.8247" y2="40.5" stroke="#E0BE2D" stroke-opacity="0.2" stroke-width="0.649351"/>
+<line x1="11.8247" y1="8.5" x2="11.8247" y2="40.5" stroke="#E0BE2D" stroke-opacity="0.2" stroke-width="0.649351"/>
+<line x1="42.5" y1="11.8247" x2="7.5" y2="11.8247" stroke="#E0BE2D" stroke-opacity="0.2" stroke-width="0.649351"/>
+<line x1="42.5" y1="37.8247" x2="7.5" y2="37.8247" stroke="#E0BE2D" stroke-opacity="0.2" stroke-width="0.649351"/>
+<circle cx="25" cy="25" r="24.026" fill="#E0BE2D" fill-opacity="0.2" stroke="#E0BE2D" stroke-width="1.94805"/>
+<circle cx="25.5" cy="24.5" r="14" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M26 32.5C30.1421 32.5 33.5 29.1421 33.5 25C33.5 20.8579 30.1421 17.5 26 17.5C21.8579 17.5 18.5 20.8579 18.5 25C18.5 29.1421 21.8579 32.5 26 32.5ZM26 22.0833C26 21.6231 25.6269 21.25 25.1667 21.25C24.7064 21.25 24.3333 21.6231 24.3333 22.0833V26.25C24.3333 26.7102 24.7064 27.0833 25.1667 27.0833H27.6667C28.1269 27.0833 28.5 26.7102 28.5 26.25C28.5 25.7898 28.1269 25.4167 27.6667 25.4167H26V22.0833Z" fill="#E0BE2D"/>
+</svg>

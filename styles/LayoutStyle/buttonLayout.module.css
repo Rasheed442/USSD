@@ -1,0 +1,13 @@
+.btn button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}

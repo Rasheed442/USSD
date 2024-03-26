@@ -1,0 +1,82 @@
+.bg {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    padding-top: 100px;
+}
+
+.bg button {
+    background-color: #5E5ADB;
+    color: white;
+    border-radius: 8px;
+    height: 40px;
+    padding: 13px 12px 13px 12px;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    line-height:20px ;
+    font-size: 14px;
+    align-items: center;
+    gap: 10px;
+}
+.btn{
+    display: flex;
+    gap: 10px;
+}
+.date {
+    background-color: white;
+    border: 1px solid gainsboro;
+    height: 40px;
+    padding: 10px;
+    color: #344054;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: center;
+    gap: 4px;
+    position: relative;
+}
+.head {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.head h1 {
+    font-size: 28px;
+    color: #090814;
+    line-height: 37px;
+    font-weight: 500;
+}
+
+.head span {
+    background-color: #ECECF4;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 4px 8px 4px 8px;
+    border-radius: 5px;
+    color: #5E5ADB;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container p {
+    color: #848D87;
+    font-size: 14px;
+    font-weight: 300;
+}
+.calendar {
+    position: absolute;
+}
+.white {
+    background-color: white;
+    margin: 0px 30px 30px 30px;
+}
+
+
