@@ -18,10 +18,7 @@ function countryPrefix() {
               <p>Manage and view all resellers and clients registered.</p>
             </div>
           </div>
-          <button
-            //  onClick={() => setMerchantDetails(true)}
-            onClick={() => setUpload(true)}
-          >
+          <button onClick={() => setUpload(true)}>
             Upload Operator Prefixes
           </button>
         </div>
@@ -56,12 +53,7 @@ function countryPrefix() {
                 <option>5</option>
               </select>
               <div className="arrow">
-                <button
-                  onClick={() => {
-                    // setSortDate(sortdate - 1);
-                    // setEnd((prev) => prev - end);
-                  }}
-                >
+                <button>
                   <AiOutlineLeft />
                 </button>
                 <button>1</button>

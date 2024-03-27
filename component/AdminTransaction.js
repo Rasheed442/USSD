@@ -24,19 +24,10 @@ import CustomerReq from "@/ChartComponent/CustomerReq";
 import TokenizedCard from "@/ChartComponent/TokenizedCard";
 import Detokenized from "@/ChartComponent/Detokenized";
 import styled from "styled-components";
-import CustomerRequest from "@/ChartComponent/CustomerRequest";
 import Card2 from "@/ChartComponent/Card2";
 import USSDsessionAnalysis from "@/ChartComponent/USSDsessionAnalysis";
 function AdminTransaction() {
-  const [search, setSearch] = useState();
   const [show, setShow] = useState(false);
-  const [state, setState] = useState([
-    {
-      startDate: new Date(),
-      endDate: addDays(new Date(), 7),
-      key: "selection",
-    },
-  ]);
 
   const Analytics = [
     {
@@ -142,7 +133,7 @@ function AdminTransaction() {
               return (
                 <div className="charts">
                   <div className="details">
-                    <Image src={g.icon} height={45} width={45} />
+                    <Image src={g.icon} height={45} width={45} alt="" />
                     <span>{g.details}</span>
                     <p>{g.amount}</p>
                   </div>

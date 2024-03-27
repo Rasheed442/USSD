@@ -3,14 +3,12 @@ import { tokenized, de_tokenized, customer_request } from "@/public/Image";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import AdminDashboard from "@/component/AdminDashboard";
-import MerchantDashboard from "@/component/MerchantDashboard";
 import TokenizedCard from "@/ChartComponent/TokenizedCard";
 import Detokenized from "@/ChartComponent/Detokenized";
 import DeletedTokens from "@/ChartComponent/DeletedTokens";
 import CustomerReq from "@/ChartComponent/CustomerReq";
 import { Bin } from "@/public/ICON";
 import { AiOutlineArrowUp } from "react-icons/ai";
-import ManagerDashboard from "@/component/ManagerDashboard";
 import ProtectedRoute from "@/P_Route/ProtectedRoute";
 function Dashboard() {
   const role =
@@ -121,44 +119,13 @@ function Dashboard() {
   return (
     <div>
       {/* <ProtectedRoute> */}
-      {role === "admin" ? (
-        role && (
-          <AdminDashboard
-            Adminlabels={Adminlabels && Adminlabels}
-            Merchantlabels={Merchantlabels}
-          />
-        )
-      ) : role === "reseller" ? (
-        <MerchantDashboard Merchantlabels={Merchantlabels} />
-      ) : role === "client" ? (
-        <ManagerDashboard Managerlabels={Managerlabels && Managerlabels} />
-      ) : (
-        <ManagerDashboard Managerlabels={Managerlabels && Managerlabels} />
+      {role && role === "admin" && (
+        <AdminDashboard
+          Adminlabels={Adminlabels && Adminlabels}
+          Merchantlabels={Merchantlabels}
+        />
       )}
-      {/* </ProtectedRoute> */}
     </div>
-    // <div>
-    //   {role === "SUPERADMIN" && role && (
-    //     <AdminDashboard Adminlabels={Adminlabels && Adminlabels} />
-    //   )}
-    //   {role === "MERCHANT" && (
-    //     <MerchantDashboard Merchantlabels={Merchantlabels} />
-    //   )}
-    //   {role === "MANAGER" && (
-    //     <ManagerDashboard Managerlabels={Managerlabels && Managerlabels} />
-    //   )}
-    //   {/* {!role && (
-    //     <ManagerDashboard Managerlabels={Managerlabels && Managerlabels} />
-    //   )} */}
-    // </div>
-
-    // <div>
-    //   {role === "USER" ? (
-    //     role && <MerchantDashboard Adminlabels={Adminlabels} />
-    //   ) : (
-    //     <AdminDashboard Merchantlabels={Merchantlabels} />
-    //   )}
-    // </div>
   );
 }
 

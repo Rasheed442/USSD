@@ -5,14 +5,10 @@ import Image from "next/image";
 import style from "../styles/AuthStyle/login.module.css";
 import { BsEyeSlash } from "react-icons/bs";
 
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import PulseLoader from "react-spinners/PulseLoader";
-import { Autoplay, Pagination, Navigation } from "swiper";
-import { atm, lock } from "@/public/Image";
-import toast from "react-hot-toast";
+
 import { ussdlogo } from "@/public/ICON";
 import ButtonLayout from "@/Layouts/ButtonLayout";
 import { useRouter } from "next/router";
@@ -123,16 +119,6 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* <div className={style.btn} onClick={submitHandler}>
-                  <button>
-                    {loading ? (
-                      // <ClipLoader loading={loading} size={20} color={color} />
-                      <PulseLoader color="white" loading={loading} size={20} />
-                    ) : (
-                      "Login"
-                    )}
-                  </button>
-                </div> */}
               <ButtonLayout
                 svg="none"
                 styles={{

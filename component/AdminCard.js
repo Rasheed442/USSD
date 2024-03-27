@@ -51,13 +51,6 @@ function AdminCard() {
                 <AiOutlineSearch size={20} />
                 <input placeholder="Search" />
               </div>
-              {/* <div className={styles.sort}>
-              <p>
-                <span>sort:</span>Date created <AiOutlineDown size={13} />
-              </p>
-              <Image src={dashbar} width={25} height={25} alt="" />
-              <Image src={menu} width={30} height={30} alt="" />
-            </div> */}
             </div>
             <div className={styles.tablecontent}>
               <table className={styles.table}>

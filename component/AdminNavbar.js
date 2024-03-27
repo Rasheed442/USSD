@@ -73,7 +73,7 @@ function AdminNavbar() {
     },
     {
       name: "USSD Service",
-      url: "/cards",
+      url: "/service",
       icon: <IoCallOutline size={17} />,
     },
     {

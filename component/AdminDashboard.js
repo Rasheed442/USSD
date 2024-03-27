@@ -1,7 +1,6 @@
 import DashbaordLayout from "@/Layouts/DashbaordLayout";
 import style from "../styles/ComponentStyle/admindashboard.module.css";
 import Image from "next/image";
-import { tradedown } from "@/public/ICON";
 import Link from "next/link";
 import MerchanyHistoryChart from "@/ChartComponent/MerchanyHistoryChart";
 import Card from "@/ChartComponent/Card";
@@ -25,7 +24,6 @@ import AdminHeader from "./AdminHeader";
 import TokenizedCard from "@/ChartComponent/TokenizedCard";
 import RevenueReport from "./RevenueReport";
 import CustomerRequest from "@/ChartComponent/CustomerRequest";
-import Stacked from "@/ChartComponent/Stacked";
 import USSDSERVICE from "@/ChartComponent/USSDSERVICE";
 import CampaignPerformnace from "@/ChartComponent/CampaignPerformnace";
 
