@@ -147,6 +147,117 @@ function networkConfig() {
                 />
               </div>
             )}
+            {api && (
+              <div>
+                <LabelinputLayout
+                  inputstyle={{ width: "50%" }}
+                  label="API Endpoint URL"
+                  placeholder="https:URL///hhjsbnhks s"
+                />
+                <LabelinputLayout
+                  inputstyle={{ width: "50%" }}
+                  label="API Key"
+                  placeholder="3678vhnvdachjv376378e57"
+                />
+                <LabelinputLayout
+                  inputstyle={{ width: "50%" }}
+                  label="Username"
+                  placeholder="Enter your username"
+                />
+                <LabelinputLayout
+                  inputstyle={{ width: "50%" }}
+                  label="Password"
+                  placeholder="Enter your password"
+                />
+                <LabelinputLayout
+                  inputstyle={{ width: "50%" }}
+                  label="Request Method"
+                  placeholder="POST"
+                />
+                <LabelinputLayout
+                  inputstyle={{ width: "50%" }}
+                  label="Request Headers"
+                  placeholder="Content-Type"
+                />
+                <LabelinputLayout
+                  inputstyle={{ width: "50%" }}
+                  label="Request Body Format"
+                  placeholder="XML"
+                />
+                <LabelinputLayout
+                  inputstyle={{ width: "50%" }}
+                  label="Allowed Prefixes"
+                  placeholder="44"
+                />
+              </div>
+            )}
+            {sip && (
+              <div>
+                <LabelinputLayout
+                  inputstyle={{ width: "50%" }}
+                  label="SIP Server Address"
+                  placeholder="https:URL///hhjsbnhks s"
+                />
+                <LabelinputLayout
+                  inputstyle={{ width: "50%" }}
+                  label="SIP Port"
+                  placeholder="2673.273662.28"
+                />
+                <LabelinputLayout
+                  inputstyle={{ width: "50%" }}
+                  label="SIP Username"
+                  placeholder="Enter your username"
+                />
+                <LabelinputLayout
+                  inputstyle={{ width: "50%" }}
+                  label="Password"
+                  placeholder="Enter your password"
+                />
+                <LabelinputLayout
+                  inputstyle={{ width: "50%" }}
+                  label="SIP Protocol Version"
+                  placeholder="SIP 2.0"
+                />
+                <div className="role">
+                  <label>SIP Transport Protocol</label>
+                  <div className="select">
+                    <select>
+                      <option value="1">UDP</option>
+                    </select>
+                    <svg
+                      width="12"
+                      height="8"
+                      viewBox="0 0 12 8"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M1 1.5L6 6.5L11 1.5"
+                        stroke="#667085"
+                        stroke-width="1.66667"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <LabelinputLayout
+                  inputstyle={{ width: "50%" }}
+                  label="SIP Content Type"
+                  placeholder="application/vnd.3gpp.ussd+xml"
+                />
+                <LabelinputLayout
+                  inputstyle={{ width: "50%" }}
+                  label="Allowed Prefixes"
+                  placeholder="44"
+                />
+                <LabelinputLayout
+                  inputstyle={{ width: "50%" }}
+                  label="Denied Prefixes"
+                  placeholder="234"
+                />
+              </div>
+            )}
           </div>
         </div>
       </DashbaordLayout>

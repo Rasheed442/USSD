@@ -87,7 +87,13 @@ function CampaignPerformnace() {
           padding={{ top: 0, bottom: 50 }}
         />
         {/* <Tooltip /> */}
-        <Line type="monotone" dataKey="uv" stroke="#5E5ADB" fill="#D94040" />
+        <Line
+          type="monotone"
+          dataKey="uv"
+          stroke="#5E5ADB"
+          fill="#D94040"
+          strokeWidth={3.5}
+        />
       </LineChart>
     </ResponsiveContainer>
   );

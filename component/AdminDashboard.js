@@ -279,7 +279,7 @@ function AdminDashboard({ Adminlabels, Merchantlabels }) {
       {/* User distributions and campaign performance */}
 
       {/* table side  for transactions  */}
-      <div className={style.tablecontent}>
+      {/* <div className={style.tablecontent}>
         <div className={style.content}>
           <h1>Recent History</h1>
           <Link href="/transaction">
@@ -331,7 +331,7 @@ function AdminDashboard({ Adminlabels, Merchantlabels }) {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </DashbaordLayout>
   );
 }

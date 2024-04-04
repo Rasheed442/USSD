@@ -63,8 +63,8 @@ function CustomerRequest() {
 
           style: {
             colors: "#464F60", // Color of y-axis labels
-            fontSize: "12px", // Font size of y-axis labels
-            fontWeight: 400, // Font weight of y-axis labels
+            fontSize: "14px", // Font size of y-axis labels
+            fontWeight: 500, // Font weight of y-axis labels
             fontFamily: "Arial, sans-serif", // Font family of y-axis labels
             // Other style properties can be added as needed
           },
@@ -78,6 +78,7 @@ function CustomerRequest() {
           format: "dd/MM/yy HH:mm",
         },
       },
+      colors: ["#4318FF", "#D94040"],
     },
   });
   return (

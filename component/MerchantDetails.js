@@ -27,9 +27,16 @@ import Overview from "@/UserManagementComp/Overview";
 import RouteSetting from "@/UserManagementComp/RouteSetting";
 import ShortCode from "@/UserManagementComp/ShortCode";
 import UssdSession from "@/UserManagementComp/UssdSession";
+import CreditDbitAcc from "@/UserManagementComp/CreditDbitAcc";
+import TopUp from "./TopUp";
+import Transactions from "@/UserManagementComp/Transactions";
+import CreditLog from "@/UserManagementComp/CreditLog";
+import { useRouter } from "next/router";
 function MerchantDetails({ CloseMerchantDetails }) {
   const [searh, setSearch] = useState();
   const [showdate, setShowDate] = useState(false);
+  const [pop, setPop] = useState(false);
+
   const [state, setState] = useState([
     {
       startDate: new Date(),
@@ -37,6 +44,7 @@ function MerchantDetails({ CloseMerchantDetails }) {
       key: "selection",
     },
   ]);
+  const router = useRouter();
 
   // overview settings
   const [overview, setOverview] = useState(true);
@@ -50,6 +58,7 @@ function MerchantDetails({ CloseMerchantDetails }) {
 
   return (
     <>
+      {pop && <TopUp pop={setPop} />}
       <div className={style.bg}>
         <div className={style.container}>
           <div className={style.head}>
@@ -163,7 +172,7 @@ function MerchantDetails({ CloseMerchantDetails }) {
                 setReportAnalytics(false);
               }}
             >
-              Credit/Debit
+              Credit/Debit Account
             </p>
             <p
               style={{
@@ -206,16 +215,17 @@ function MerchantDetails({ CloseMerchantDetails }) {
                 backgroundColor: reportanalytics ? "#5E5ADB26" : "",
                 color: reportanalytics ? "#5E5ADB" : "",
               }}
-              onClick={() => {
-                setOverview(false);
-                setRouteSetting(false);
-                setShortcode(false);
-                setUssdSesions(false);
-                setCredit(false);
-                setTransactions(false);
-                setCreditlog(false);
-                setReportAnalytics(true);
-              }}
+              onClick={() => router.push("/report")}
+              // onClick={() => {
+              //   setOverview(false);
+              //   setRouteSetting(false);
+              //   setShortcode(false);
+              //   setUssdSesions(false);
+              //   setCredit(false);
+              //   setTransactions(false);
+              //   setCreditlog(false);
+              //   setReportAnalytics(true);
+              // }}
             >
               Report Analytics
             </p>
@@ -225,6 +235,9 @@ function MerchantDetails({ CloseMerchantDetails }) {
         {routesetting && <RouteSetting />}
         {shortcode && <ShortCode />}
         {ussdsessions && <UssdSession />}
+        {credit && <CreditDbitAcc pop={setPop} />}
+        {transaction && <Transactions />}
+        {creditlog && <CreditLog />}
       </div>
     </>
   );

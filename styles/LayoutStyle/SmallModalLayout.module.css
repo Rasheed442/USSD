@@ -19,7 +19,7 @@ border-radius: 10px;
 .top{
     display: flex;
     align-items: flex-start;
-    border-bottom:  1px solid gainsboro;
+    border-bottom:  1px solid #EAECF0;
     justify-content: space-between;
     padding: 20px;
 }

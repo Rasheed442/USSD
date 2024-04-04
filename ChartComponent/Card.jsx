@@ -4,7 +4,7 @@ import style from "../styles/ChatStyle/card.module.css";
 const ApexCharts = dynamic(() => import("react-apexcharts"), { ssr: false });
 function Card() {
   const options = {
-    series: [44, 55, 13],
+    series: [44, 13],
     options: {
       labels: ["Reseller", "Clients"],
       chart: {
@@ -45,7 +45,7 @@ function Card() {
         />
         <div className={style.title}>
           <p>Total</p>
-          <h1>80,000</h1>
+          <h1>5,000</h1>
         </div>
       </div>
     </div>

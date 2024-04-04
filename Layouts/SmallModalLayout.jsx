@@ -1,12 +1,19 @@
 import React, { Children } from "react";
 import style from "../styles/LayoutStyle/SmallModalLayout.module.css";
-const SmallModalLayout = ({ children, title, subtitle, onClick }) => {
+const SmallModalLayout = ({
+  children,
+  title,
+  subtitle,
+  onClick,
+  titstyle,
+  topStyle,
+}) => {
   return (
     <div className={style.container}>
       <div className={style.white}>
-        <div className={style.top}>
+        <div className={style.top} style={topStyle}>
           <div className={style.main}>
-            <h3>{title}</h3>
+            <h3 style={titstyle}>{title}</h3>
             <span>{subtitle}</span>
           </div>
           <svg

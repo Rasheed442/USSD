@@ -49,9 +49,12 @@
     gap: 7px;
 }
 .top h1{
-   font-size: 17px;
-   font-weight: 600;
+   font-size: 15px;
+   font-weight: 500;
    line-height: 20px;
+}
+.top span{
+    color: #667085;
 }
 .table {
     width: 100%;

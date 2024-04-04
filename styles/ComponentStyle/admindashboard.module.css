@@ -47,17 +47,17 @@
 .transactions {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    background-color: white;
     /* margin: 0px 30px 0px 30px; */
+    gap: 20px;
     border-radius: 10px;
 }
- .transactions>* {
+ /* .transactions>* {
      border-right: 1px solid #D5DBE5;
  }
 
  .transactions> :last-child {
      border-right: none;
- }
+ } */
 .mychart {
     position: absolute;
     right: 10px;
@@ -67,8 +67,11 @@
 .template {
     padding: 10px;
     width: 100%;
+    box-shadow: 0px 0px 3px 0px gainsboro;
     display: flex;
+        background-color: white;
     position: relative;
+    border-radius: 7px;
     justify-content: space-between;
 
     /* margin: 20px 0px 20px 0px; */
@@ -211,8 +214,8 @@
 .ussdsession span{
     color: #5E5ADB;
     line-height: 32px;
-    font-weight: 600;
-    font-size: 34px;
+    font-weight: 500;
+    font-size: 30px;
     letter-spacing: -2%;
 }
 .totals{
@@ -223,8 +226,8 @@
     color: #027A48;
     letter-spacing: -2%;
     line-height: 20px;
-    font-size: 10px;
-    font-weight: 500;
+    font-size: 11px;
+    font-weight: 600;
 }
 .totals p{
     color: #454545;
@@ -268,7 +271,7 @@
     height: 15px;
     width: 15px;
         border-radius: 3px;
-    background-color: red;
+    background-color: #D94040;
 }
 .line2{
     height: 14px;

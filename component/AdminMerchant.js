@@ -163,7 +163,11 @@ function AdminMerchant() {
               <thead>
                 <tr>
                   <th
-                    style={{ display: "flex", gap: "6px", paddingLeft: "20px" }}
+                    style={{
+                      display: "flex",
+                      gap: "12px",
+                      paddingLeft: "20px",
+                    }}
                   >
                     <input type="checkbox" />
                     USER NAME
@@ -278,7 +282,11 @@ function AdminMerchant() {
                         </div>
                       </td>
                       <td
-                        style={{ color: "#5E5ADB", cursor: "pointer" }}
+                        style={{
+                          color: "#5E5ADB",
+                          cursor: "pointer",
+                          fontWeight: "700",
+                        }}
                         onClick={() => setMerchantDetails(true)}
                       >
                         View

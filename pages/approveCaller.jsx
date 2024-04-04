@@ -10,8 +10,8 @@ function approveCaller() {
         <AdminHeader title="SIP Accounts" />
         <div className="bg">
           <div className="container">
-            <h1>Manage Routes</h1>
-            <p>Manage IVR Routes and routing rules.</p>
+            <h1>Approve Caller ID</h1>
+            <p>Approve or reject caller ID request from users.</p>
           </div>
         </div>
         <div className="white">
@@ -34,7 +34,7 @@ function approveCaller() {
                   style={{ display: "flex", gap: "6px", paddingLeft: "20px" }}
                 >
                   <input type="checkbox" />
-                  CALLER ID
+                  USSD ID
                 </th>
                 <th>REQUESTED BY</th>
                 <th>DATE REQUESTED</th>

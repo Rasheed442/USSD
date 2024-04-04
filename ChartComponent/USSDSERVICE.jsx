@@ -5,7 +5,7 @@ const ReactApexChart = dynamic(() => import("react-apexcharts"), {
 });
 function USSDSERVICE() {
   const [chartData] = useState({
-    series: [76, 67, 61, 90],
+    series: [76, 67, 61, 90, 20],
     options: {
       chart: {
         height: 390,
@@ -32,8 +32,8 @@ function USSDSERVICE() {
           },
         },
       },
-      colors: ["#1ab7ea", "#0084ff", "#39539E", "#0077B5"],
-      labels: ["Vimeo", "Messenger", "Facebook", "LinkedIn"],
+      colors: ["#688AE8", "#E07941", "#8456CE", "#539FE5", "#539FE5"],
+      labels: ["Service A", "Service B", "Service C", "Service D", "Service E"],
       legend: {
         show: true,
         floating: true,
@@ -72,7 +72,7 @@ function USSDSERVICE() {
         options={chartData.options}
         series={chartData.series}
         type="radialBar"
-        height={390}
+        height={350}
       />
     </div>
   );
