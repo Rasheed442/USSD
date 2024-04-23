@@ -9,16 +9,16 @@ const data02 = [
   { name: "Service E", value: 40 },
 ];
 
-function playground() {
+function UssdServiceChart() {
   const COLORS = ["#539FE5", "#E07941", "#8456CE", "#2EA597", "#C33D69"]; // Array of colors for slices
   return (
-    <ResponsiveContainer width="100%" aspect={2}>
-      <PieChart width={400} height={400}>
+    <ResponsiveContainer width="100%" aspect={1.5}>
+      <PieChart>
         <Pie
           data={data02}
           dataKey="value"
           cx="50%"
-          cy="50%"
+          cy="60%"
           innerRadius={70}
           outerRadius={90}
           label={({ name, value }) => `${name}: ${value}%`} // Customize label content
@@ -27,11 +27,9 @@ function playground() {
             <Cell key={`cell-${index}`} fill={COLORS[index]} />
           ))}
         </Pie>
-
-        <Legend />
       </PieChart>
     </ResponsiveContainer>
   );
 }
 
-export default playground;
+export default UssdServiceChart;

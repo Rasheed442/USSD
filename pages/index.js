@@ -20,7 +20,7 @@ export default function Home() {
   const [password, setPassword] = useState();
   const [see, setSee] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [roles, setRoles] = useState("admin");
+  const [roles, setRoles] = useState("client");
   // admin, resseller, client
   const details = { username, email, password };
 

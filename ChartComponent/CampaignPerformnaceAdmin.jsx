@@ -12,7 +12,7 @@ import {
   Area,
   ResponsiveContainer,
 } from "recharts";
-function CampaignPerformnace() {
+function CampaignPerformanceAdmin() {
   const data = [
     {
       name: "Jan 6",
@@ -99,4 +99,4 @@ function CampaignPerformnace() {
   );
 }
 
-export default CampaignPerformnace;
+export default CampaignPerformanceAdmin;

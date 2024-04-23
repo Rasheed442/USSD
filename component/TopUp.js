@@ -1,14 +1,17 @@
 import SmallModalLayout from "@/Layouts/SmallModalLayout";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-
+import Aos from "aos";
+import "aos/dist/aos.css";
 function TopUp({ pop }) {
   const [credit, setCredit] = useState(true);
   const [debit, setDebit] = useState(false);
   const [text, setText] = useState("credit");
 
   const [action, setAction] = useState(true);
-
+  useEffect(() => {
+    Aos.init({ duration: 400 });
+  }, []);
   return (
     <Top>
       {action && (

@@ -10,6 +10,7 @@ import CustomerReq from "@/ChartComponent/CustomerReq";
 import { Bin } from "@/public/ICON";
 import { AiOutlineArrowUp } from "react-icons/ai";
 import ProtectedRoute from "@/P_Route/ProtectedRoute";
+import ClientDashboard from "@/component/ClientDashboard";
 function Dashboard() {
   const role =
     typeof window !== "undefined" ? window.localStorage.getItem("role") : null;
@@ -82,48 +83,79 @@ function Dashboard() {
       sign: <AiOutlineArrowUp style={{ color: "red" }} />,
     },
   ];
-
-  const Managerlabels = [
-    {
-      icon: total_merchant,
-      details: "Total Merchants",
-      amount: "0",
-      rate: `2.1%`,
-    },
-    {
-      icon: customer_request,
-      details: "Customer Request",
-      amount: "0",
-      rate: "2.1%",
-    },
+  const Resellerlabels = [
     {
       icon: tokenized,
-      details: "Tokenized Cards",
-      amount: "0",
+      details: "Total Spent",
+      amount: "₦250,400.02",
       rate: "2.1%",
+      charts: <Detokenized />,
+      sign: <AiOutlineArrowUp style={{ color: "red" }} />,
+    },
+
+    {
+      icon: deleted_token,
+      details: "Total USSD Sessions",
+      amount: "32,900",
+      rate: "50%",
+      charts: <DeletedTokens />,
+      sign: <AiOutlineArrowUp style={{ color: "green" }} />,
     },
     {
-      icon: de_tokenized,
-      details: "De-tokenized Cards",
-      amount: "0",
+      icon: total_merchant,
+      details: "Average Session Time",
+      amount: "0h:02m:48s",
       rate: "2.1%",
-    },
-    {
-      icon: Bin,
-      details: "Deleted Tokens",
-      amount: "0",
-      rate: "2.1%",
+      charts: <CustomerReq />,
+      sign: <AiOutlineArrowUp style={{ color: "red" }} />,
     },
   ];
+
+  // const Managerlabels = [
+  //   {
+  //     icon: total_merchant,
+  //     details: "Total Merchants",
+  //     amount: "0",
+  //     rate: `2.1%`,
+  //   },
+  //   {
+  //     icon: customer_request,
+  //     details: "Customer Request",
+  //     amount: "0",
+  //     rate: "2.1%",
+  //   },
+  //   {
+  //     icon: tokenized,
+  //     details: "Tokenized Cards",
+  //     amount: "0",
+  //     rate: "2.1%",
+  //   },
+  //   {
+  //     icon: de_tokenized,
+  //     details: "De-tokenized Cards",
+  //     amount: "0",
+  //     rate: "2.1%",
+  //   },
+  //   {
+  //     icon: Bin,
+  //     details: "Deleted Tokens",
+  //     amount: "0",
+  //     rate: "2.1%",
+  //   },
+  // ];
 
   return (
     <div>
       {/* <ProtectedRoute> */}
-      {role && role === "admin" && (
+      {role && role === "admin" ? (
         <AdminDashboard
           Adminlabels={Adminlabels && Adminlabels}
           Merchantlabels={Merchantlabels}
         />
+      ) : role && role === "client" ? (
+        <ClientDashboard Resellerlabels={Resellerlabels} />
+      ) : (
+        ""
       )}
     </div>
   );

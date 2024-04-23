@@ -25,7 +25,7 @@ import TokenizedCard from "@/ChartComponent/TokenizedCard";
 import RevenueReport from "./RevenueReport";
 import CustomerRequest from "@/ChartComponent/CustomerRequest";
 import USSDSERVICE from "@/ChartComponent/USSDSERVICE";
-import CampaignPerformnace from "@/ChartComponent/CampaignPerformnace";
+import CampaignPerformnace from "@/ChartComponent/CampaignPerformanceClient";
 
 function AdminDashboard({ Adminlabels, Merchantlabels }) {
   const [state, setState] = useState([

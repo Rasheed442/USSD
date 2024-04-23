@@ -8,10 +8,9 @@ import { BsFillCreditCardFill, BsFillTelephoneFill } from "react-icons/bs";
 import style from "../styles/ComponentStyle/navbar.module.css";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { exit, ussdlogo } from "@/public/ICON";
-import Link from "next/link";
-import { AiOutlineMenu } from "react-icons/ai";
+
 import AdminNavbar from "./AdminNavbar";
+import ClientNavbar from "./ClientNavbar";
 
 function Navbar({ closeStates, SetcloseStates }) {
   const router = useRouter();
@@ -63,7 +62,12 @@ function Navbar({ closeStates, SetcloseStates }) {
   //     },
   //   ]) ||
   //   [];
-  return <div>{role === "admin" && <AdminNavbar />}</div>;
+  return (
+    <div>
+      {role === "admin" && <AdminNavbar />}
+      {role === "client" && <ClientNavbar />}
+    </div>
+  );
 }
 
 export default Navbar;

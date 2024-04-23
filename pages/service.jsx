@@ -1,4 +1,5 @@
 import AdminCard from "@/component/AdminCard";
+import ClientService from "@/component/ClientService";
 
 import React from "react";
 import { Fragment } from "react";
@@ -9,7 +10,8 @@ function service() {
 
   return (
     <div>
-      <AdminCard />
+      {role === "admin" && <AdminCard />}
+      {role === "client" && <ClientService />}
     </div>
   );
 }

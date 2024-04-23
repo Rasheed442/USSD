@@ -1,5 +1,8 @@
-import React, { Children } from "react";
+import React, { useEffect } from "react";
 import style from "../styles/LayoutStyle/SmallModalLayout.module.css";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 const SmallModalLayout = ({
   children,
   title,
@@ -8,9 +11,12 @@ const SmallModalLayout = ({
   titstyle,
   topStyle,
 }) => {
+  useEffect(() => {
+    Aos.init({ duration: 400 });
+  }, []);
   return (
     <div className={style.container}>
-      <div className={style.white}>
+      <div className={style.white} data-aos="slide-up">
         <div className={style.top} style={topStyle}>
           <div className={style.main}>
             <h3 style={titstyle}>{title}</h3>
