@@ -73,7 +73,9 @@ const Reseller = styled.div`
     line-height: 9px;
   }
   .head {
-    background-color: #5e5adb;
+    /* background-color: #5e5adb; */
+    /* background-color: #323075; */
+    background: linear-gradient(to right, #5e5adb, #323075);
     padding: 70px 20px 70px 20px;
     display: flex;
     justify-content: space-between;

@@ -113,7 +113,13 @@ function ClientDashboard({ Adminlabels, Resellerlabels }) {
                       <Image src={m.icon} alt="" width={45} height={45} />
                       <p>{m?.details}</p>
                     </div>
-                    <h2 style={{ fontWeight: "500" }}>{m?.amount}</h2>
+                    <h2
+                      style={{
+                        fontWeight: "500",
+                      }}
+                    >
+                      {m?.amount}
+                    </h2>
                     <div
                       style={{
                         display: "flex",
@@ -276,6 +282,10 @@ export default ClientDashboard;
 const ResellerDash = styled.div`
   overflow: hidden;
   width: -webkit-fill-available;
+  .thechart {
+    width: 100%;
+    height: 100%;
+  }
   .compaignPerformance {
     margin: 20px;
   }
@@ -352,6 +362,7 @@ const ResellerDash = styled.div`
     padding: 10px;
     width: 100%;
     box-shadow: 0px 0px 0px 1px gainsboro;
+    border: 1px solid gainsboro;
     display: flex;
     background-color: white;
     position: relative;
