@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 
 import AdminNavbar from "./AdminNavbar";
 import ClientNavbar from "./ClientNavbar";
+import ResellerNavbar from "./ResellerNavbar";
 
 function Navbar({ closeStates, SetcloseStates }) {
   const router = useRouter();
@@ -66,6 +67,7 @@ function Navbar({ closeStates, SetcloseStates }) {
     <div>
       {role === "admin" && <AdminNavbar />}
       {role === "client" && <ClientNavbar />}
+      {role === "reseller" && <ResellerNavbar />}
     </div>
   );
 }

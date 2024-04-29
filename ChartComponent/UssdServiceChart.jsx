@@ -12,7 +12,7 @@ const data02 = [
 function UssdServiceChart() {
   const COLORS = ["#539FE5", "#E07941", "#8456CE", "#2EA597", "#C33D69"]; // Array of colors for slices
   return (
-    <ResponsiveContainer width="100%" aspect={1.5}>
+    <ResponsiveContainer width="100%" aspect={2}>
       <PieChart>
         <Pie
           data={data02}

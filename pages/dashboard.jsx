@@ -11,6 +11,7 @@ import { Bin } from "@/public/ICON";
 import { AiOutlineArrowUp } from "react-icons/ai";
 import ProtectedRoute from "@/P_Route/ProtectedRoute";
 import ClientDashboard from "@/component/ClientDashboard";
+import ResellerDashboard from "@/component/ResellerDashboard";
 function Dashboard() {
   const role =
     typeof window !== "undefined" ? window.localStorage.getItem("role") : null;
@@ -154,6 +155,8 @@ function Dashboard() {
         />
       ) : role && role === "client" ? (
         <ClientDashboard Resellerlabels={Resellerlabels} />
+      ) : role && role === "reseller" ? (
+        <ResellerDashboard Merchantlabels={Merchantlabels} />
       ) : (
         ""
       )}

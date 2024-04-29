@@ -12,7 +12,7 @@ import {
   Area,
   ResponsiveContainer,
 } from "recharts";
-function CampaignPerformanceClient() {
+function CampaignPerformanceReseller() {
   const data = [
     {
       name: "Jan 6",
@@ -34,8 +34,8 @@ function CampaignPerformanceClient() {
     },
     {
       name: "Jan 9",
-      uv: 2780,
-      pv: 3908,
+      uv: 1000,
+      pv: 2000,
       amt: 2000,
     },
     {
@@ -99,4 +99,4 @@ function CampaignPerformanceClient() {
   );
 }
 
-export default CampaignPerformanceClient;
+export default CampaignPerformanceReseller;

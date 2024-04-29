@@ -15,7 +15,7 @@ import { useRouter } from "next/router";
 import { exit, ussdlogo } from "@/public/ICON";
 import Link from "next/link";
 // Available@2024??
-function AdminNavbar() {
+function ResellerNavbar() {
   const [subMenu, setSubmenu] = useState(false);
 
   const router = useRouter();
@@ -40,37 +40,7 @@ function AdminNavbar() {
       url: "/usermanagement",
       icon: <AiOutlineUsergroupDelete size={18} />,
     },
-    {
-      name: "Administration",
-      url: "",
-      icon: <CiBank size={17} />,
-      subMenu: [
-        {
-          name: "System Monitor",
-          url: "/SystemMonitor",
-        },
-        {
-          name: "Network Config",
-          url: "/networkConfig",
-        },
-        {
-          name: "Manage Route",
-          url: "/manageRoute",
-        },
-        {
-          name: "Country/Prefix",
-          url: "/countryPrefix",
-        },
-        {
-          name: "Approve Caller ID",
-          url: "/approveCaller",
-        },
-        {
-          name: "Blaclist Mgmt",
-          url: "/blacklistmgt",
-        },
-      ],
-    },
+
     {
       name: "USSD Service",
       url: "/service",
@@ -213,6 +183,7 @@ function AdminNavbar() {
                           color: router.pathname === s?.url ? "#1A1A1A" : "",
                         }}
                         className={style.submenu}
+                        data-aos="slide-right"
                         onClick={() => {
                           router.push(s.url);
                         }}
@@ -268,4 +239,4 @@ function AdminNavbar() {
   );
 }
 
-export default AdminNavbar;
+export default ResellerNavbar;
