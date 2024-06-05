@@ -1,14 +1,58 @@
 import DashbaordLayout from "@/Layouts/DashbaordLayout";
 import AdminHeader from "@/component/AdminHeader";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { AiOutlineLeft, AiOutlineRight, AiOutlineSearch } from "react-icons/ai";
 import UploadPrefix from "@/component/UploadPrefix";
+import Axios from "axios";
+import { config, token } from "@/component/Authorization";
+import { Dropdown } from "rsuite";
+import "rsuite/dist/rsuite.min.css";
+import { BiDotsVerticalRounded } from "react-icons/bi";
 function countryPrefix() {
   const [upload, setUpload] = useState(false);
+  const [prefix, setPrefix] = useState();
+  const [refresh, setRefresh] = useState();
+  useEffect(() => {
+    Axios.get(`${process.env.NEXT_PUBLIC_API}prefix/getPrefixs`, config)
+      .then((response) => {
+        setPrefix(response?.data?.data);
+      })
+      .catch((error) => {});
+  }, [refresh]);
+  async function HandleClick(d) {
+    try {
+      //   setLoading(true);
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API}prefix/deletePrefix/${d.id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      const server = await response.json();
+      console.log(server);
+      if (server?.status === true) {
+        toast.success(server?.message);
+        // window.location.pathname = "/shortcode";
+        setLoading(false);
+      } else if (server?.status === false) {
+        toast.error(server?.message);
+        setLoading(false);
+      }
+    } catch (error) {
+      console.log(error);
+      //   setLoading(false);
+    }
+    setRefresh((prev) => !prev);
+  }
   return (
     <Country>
-      {upload && <UploadPrefix close={setUpload} />}
+      {upload && <UploadPrefix close={setUpload} refresh={setRefresh} />}
       <DashbaordLayout>
         <AdminHeader title="Country Prefix" />
         <div className="bg">
@@ -35,14 +79,34 @@ function countryPrefix() {
             <table className="table">
               <thead>
                 <tr>
-                  <th>COUNTRY</th>
-                  <th>PREFIX </th>
-                  <th>OPERATOR PREFIXES </th>
+                  <th>COUNTRY NAME</th>
+                  <th>COUNTRY CODE </th>
+                  <th>PREFIXE</th>
                   <th>TIMEZONE </th>
-                  <th>ACTION </th>
+                  <th>CREATED AT </th>
+                  <th>ACTION</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+                {prefix?.map((d) => {
+                  return (
+                    <tr>
+                      <td>{d?.countryName}</td>
+                      <td>{d?.countryCode}</td>
+                      <td>{d?.prefix}</td>
+                      <td>{d?.timezone}</td>
+                      <td>{d?.createdAt.toString().slice(0, 10)}</td>
+                      <td>
+                        <Dropdown title={<BiDotsVerticalRounded size={20} />}>
+                          <Dropdown.Item onClick={() => HandleClick(d)}>
+                            Delete Prefix
+                          </Dropdown.Item>
+                        </Dropdown>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
             </table>
           </div>
           <div className="row">
@@ -50,7 +114,7 @@ function countryPrefix() {
             <div className="pagins">
               <p>Rows per page:</p>
               <select>
-                <option>5</option>
+                <option>10</option>
               </select>
               <div className="arrow">
                 <button>
@@ -143,7 +207,7 @@ const Country = styled.div`
   .table {
     border-collapse: collapse;
     font-size: 11.5px;
-    width: 100vw;
+    width: 100%;
   }
 
   .table th {

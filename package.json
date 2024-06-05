@@ -24,7 +24,7 @@
     "react-loading-skeleton": "^3.3.1",
     "react-spinners": "^0.13.8",
     "recharts": "^2.5.0",
-    "rsuite": "^5.37.2",
+    "rsuite": "^5.61.0",
     "styled-components": "^5.3.10",
     "swiper": "^9.2.4"
   }

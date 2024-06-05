@@ -1,10 +1,107 @@
 import LabelinputLayout from "@/Layouts/LabelinputLayout";
 import SmallModalLayout from "@/Layouts/SmallModalLayout";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { AiOutlineDown } from "react-icons/ai";
+import Axios from "axios";
+import { config, token } from "./Authorization";
+import PulseLoader from "react-spinners/PulseLoader";
+import toast from "react-hot-toast";
 
-function UploadPrefix({ close }) {
+function UploadPrefix({ close, refresh }) {
+  const [countryData, setCountryData] = useState();
+  const [timezones, setTimeZone] = useState();
+  const [loading, setLoading] = useState(false);
+  const [myData, setData] = useState({
+    countryName: "France",
+    prefix: "+33",
+    operatorPrefix: "0",
+    timezone: "Pacific/Midway",
+  });
+
+  useEffect(() => {
+    Axios.get(`${process.env.NEXT_PUBLIC_API}country`, config)
+      .then((response) => {
+        setCountryData(response?.data);
+      })
+      .catch((error) => {});
+  }, []);
+  useEffect(() => {
+    Axios.get(`${process.env.NEXT_PUBLIC_API}prefix/getTimezones`, config)
+      .then((response) => {
+        setTimeZone(response?.data?.data);
+      })
+      .catch((error) => {});
+  }, []);
+
+  // async function CreateHandler() {
+  //   try {
+  //     setLoading(true);
+  //     const response = await fetch(
+  //       `${process.env.NEXT_PUBLIC_API}prefix/createPrefix`,
+  //       {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //           Authorization: `Bearer ${token}`,
+  //         },
+  //         body: JSON.stringify(myData),
+  //       }
+  //     );
+
+  //     const server = await response.json();
+  //     setLoading(false);
+  //     console.log(server);
+  //     if (server?.code === 200 || 201) {
+  //       toast.success(server?.message);
+  //       setLoading(false);
+  //     } else if (server?.code === 401 || 400) {
+  //       toast.error(server?.message);
+  //       alert(response?.message);
+  //       setLoading(false);
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //     setLoading(false);
+  //   }
+  //   refresh((prev) => !prev);
+  // }
+
+  async function CreateHandler() {
+    try {
+      setLoading(true);
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API}prefix/createPrefix`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(myData),
+        }
+      );
+
+      const server = await response.json();
+      setLoading(false);
+      console.log(server);
+
+      // Check for successful response
+      if (response.ok) {
+        toast.success(server?.message);
+      } else {
+        toast.error(server?.message || "An error occurred");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("An unexpected error occurred");
+      setLoading(false);
+    }
+
+    // Toggle refresh state
+    refresh((prev) => !prev);
+  }
+
   return (
     <Upload>
       <SmallModalLayout
@@ -14,18 +111,61 @@ function UploadPrefix({ close }) {
       >
         <div className="topp">
           <div className="labels">
-            <label>Partner name</label>
+            <label>Country Name</label>
             <div className="select">
-              <select>
-                <option>All</option>
-                <option>HopePSBank</option>
-                <option>FCMB</option>
+              <select
+                onChange={(e) => {
+                  setData((prev) => {
+                    return { ...prev, countryName: e.target.value };
+                  });
+                }}
+              >
+                <option>select country</option>
+                {countryData?.map((c) => {
+                  return <option>{c}</option>;
+                })}
+              </select>
+              <AiOutlineDown size={10} />
+            </div>
+          </div>
+          <LabelinputLayout
+            label="Prefix"
+            placeholder="Enter Prefix code"
+            onChange={(e) => {
+              setData((prev) => {
+                return { ...prev, prefix: e.target.value };
+              });
+            }}
+          />
+          <LabelinputLayout
+            label="Operator Prefix"
+            placeholder="Enter Operator Prefix number"
+            onChange={(e) => {
+              setData((prev) => {
+                return { ...prev, operatorPrefix: e.target.value };
+              });
+            }}
+          />
+          <div className="labels" style={{ paddingTop: "10px" }}>
+            <label>Timezone</label>
+            <div className="select">
+              <select
+                onChange={(e) => {
+                  setData((prev) => {
+                    return { ...prev, timezone: e.target.value };
+                  });
+                }}
+              >
+                <option>Select Timezone</option>
+                {timezones?.map((c) => {
+                  return <option>{c?.tzCode}</option>;
+                })}
               </select>
               <AiOutlineDown size={10} />
             </div>
           </div>
           <div className="upload">
-            <span>Upload logo</span>
+            {/* <span>Upload logo</span>
             <div className="logo">
               <svg
                 width="46"
@@ -85,7 +225,7 @@ function UploadPrefix({ close }) {
                 <br />
                 SVG, PNG, JPG or GIF (max. 800x400px)
               </p>
-            </div>
+            </div> */}
             <div className="btn">
               <button
                 style={{ color: "#464F60", border: "1px solid #464F6029" }}
@@ -93,13 +233,14 @@ function UploadPrefix({ close }) {
                 Cancel
               </button>
               <button
+                onClick={CreateHandler}
                 style={{
                   backgroundColor: "#5E5ADB",
                   border: "none",
                   color: "white",
                 }}
               >
-                Save
+                {loading ? <PulseLoader color="white" size={15} /> : "Upload"}
               </button>
             </div>
           </div>

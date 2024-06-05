@@ -62,6 +62,10 @@ function AdminNavbar() {
           url: "/countryPrefix",
         },
         {
+          name: "Shortcode ID",
+          url: "/shortcode",
+        },
+        {
           name: "Approve Caller ID",
           url: "/approveCaller",
         },

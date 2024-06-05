@@ -3,7 +3,7 @@ background: #0000005d;
     width: 100%;
     position: fixed;
     left: 0;
-    z-index:99999999;
+    z-index:999;
     height: 100vh;
     overflow: hidden;
     overflow-y: scroll;

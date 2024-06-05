@@ -18,12 +18,15 @@ export default function Home() {
   const router = useRouter();
   const [email, setEmail] = useState();
   const [username, setUsername] = useState();
+  const [fullName, setFullname] = useState();
+  const [phoneNumber, setPhoneNumber] = useState();
+  const [address, setAddress] = useState();
   const [password, setPassword] = useState();
   const [see, setSee] = useState(false);
   const [loading, setLoading] = useState(false);
   const [roles, setRoles] = useState("admin");
   // admin, reseller, client
-  const details = { username, email, password };
+  const details = { fullName, phoneNumber, username, email, password, address };
 
   async function submitHandler(e) {
     e.preventDefault();
@@ -34,32 +37,21 @@ export default function Home() {
     //   window.location = "/dashboard";
     // }, 1000);
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API}auth/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(details),
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API}auth/register`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(details),
+        }
+      );
       const server = await response.json();
       setLoading(false);
       console.log(server);
-      if (response.status === 200) {
-        typeof window !== "undefined"
-          ? localStorage.setItem("role", server?.user?.role)
-          : null;
-        typeof window !== "undefined"
-          ? localStorage.setItem("userID", server?.user?.id)
-          : null;
-        typeof window !== "undefined"
-          ? localStorage.setItem("token", server?.tokens?.access?.token)
-          : null;
-        typeof window !== "undefined"
-          ? localStorage.setItem("username", server?.user?.username)
-          : null;
-
-        toast.success("Successfully Login");
-        window.location = "/dashboard";
+      if (response.status === 200 || 201) {
+        toast.success("Signed Up Successfully");
       } else {
-        if (server?.code === 401) {
+        if (response.status != 200 || 201) {
           toast.error(server?.message);
           setLoading(false);
         }
@@ -86,13 +78,33 @@ export default function Home() {
             <div className={style.content}>
               <Image src={ussdlogo} width={370} height={110} alt="" />
               <div className={style.logs}>
-                <h1>Log in to your account</h1>
-                <p>Welcome back! Please enter your details.</p>
+                <h1>Signup to get started</h1>
+                <p>Welcome! Please enter your details.</p>
               </div>
             </div>
             <form className={style.form}>
               <div className={style.info}>
-                <label>Username / Email</label>
+                <label>Fullname</label>
+                <input
+                  type="text"
+                  placeholder="Enter fullname "
+                  onChange={(e) => {
+                    setFullname(e.target.value);
+                  }}
+                />
+              </div>
+              <div className={style.info}>
+                <label>Phonenumber</label>
+                <input
+                  type="text"
+                  placeholder="Enter phonenumber "
+                  onChange={(e) => {
+                    setPhoneNumber(e.target.value);
+                  }}
+                />
+              </div>
+              <div className={style.info}>
+                <label>email</label>
                 <input
                   type="email"
                   placeholder="Enter username or email "
@@ -114,15 +126,36 @@ export default function Home() {
                   <BsEyeSlash size={19} onClick={() => setSee(!see)} />
                 </div>
               </div>
+              <div className={style.password}>
+                <label>Username</label>
+                <div className={style.eye}>
+                  <input
+                    type="text"
+                    placeholder="Enter Username"
+                    onChange={(e) => {
+                      setUsername(e.target.value);
+                    }}
+                  />
+                </div>
+              </div>
+              <div className={style.password}>
+                <label>Address</label>
+                <div className={style.eye}>
+                  <input
+                    type="text"
+                    placeholder="Enter address"
+                    onChange={(e) => {
+                      setAddress(e.target.value);
+                    }}
+                  />
+                </div>
+              </div>
               <div className={style.forgotpass}>
                 <div className={style.routes}>
                   <div className={style.check}>
                     <input type="checkbox" />
                     <span>Remember for 30 days</span>
                   </div>
-                  <Link href="/signup">
-                    <p>Sign Up</p>
-                  </Link>
                 </div>
                 <Link href="/forgotpassword">
                   <p>Forgot password</p>

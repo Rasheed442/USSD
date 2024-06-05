@@ -1,13 +1,67 @@
 import LabelinputLayout from "@/Layouts/LabelinputLayout";
 import SmallModalLayout from "@/Layouts/SmallModalLayout";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AiOutlineDown } from "react-icons/ai";
 import styled from "styled-components";
+import Axios from "axios";
+import toast from "react-hot-toast";
 
 function NewRoute({ close }) {
   const [dedicated, setDedicated] = useState();
   const [dynamic, setDynamic] = useState();
-  const [logic, setLogic] = useState(true);
+  const [coverage, setCoverage] = useState();
+  const [name, setName] = useState();
+  const [countryData, setCountryData] = useState();
+  const [logicOptions, setLogicOptions] = useState(true);
+  const [logic, setLogic] = useState();
+  const [logictype, setLogictype] = useState();
+
+  const token =
+    typeof window !== "undefined" ? localStorage.getItem("token") : null;
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const details = { name, logic, coverage };
+
+  useEffect(() => {
+    Axios.get(`${process.env.NEXT_PUBLIC_API}country`, config)
+      .then((response) => {
+        console.log(response?.data);
+        setCountryData(response?.data);
+      })
+      .catch((error) => {});
+  }, []);
+
+  async function SaveHandler() {
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API}route/createRoute`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(details),
+        }
+      );
+
+      const server = await response.json();
+      console.log(server);
+      if (response?.status != 200 || 201) {
+        toast.error(server?.message);
+      } else if (response?.status === 200 || 201) {
+        toast.success(server?.message);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <Head>
       <div className="top">
@@ -45,31 +99,66 @@ function NewRoute({ close }) {
             inputstyle={{ width: "50%" }}
             label="Route Name"
             placeholder="Enter your network name"
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
           />
+          <div className="role">
+            <label>Coverage</label>
+            <div className="select">
+              <select
+                onChange={(e) => {
+                  setCoverage(e.target.value);
+                }}
+              >
+                <option value="0">All countries</option>
+                {countryData?.map((c) => {
+                  return <option>{c}</option>;
+                })}
+              </select>
+              <svg
+                width="12"
+                height="8"
+                viewBox="0 0 12 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 1.5L6 6.5L11 1.5"
+                  stroke="#667085"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
           <div className="role">
             <label>Select Logic</label>
             <div className="select">
               <select
                 onChange={(e) => {
+                  setLogic(e.target.value);
+
                   const selectedValue = e.target.value;
-                  if (selectedValue === "1") {
+                  if (selectedValue === "dedicated") {
                     setDedicated(true);
                     setDynamic(false);
-                    setLogic(false);
-                  } else if (selectedValue === "2") {
+                    setLogicOptions(false);
+                  } else if (selectedValue === "Dynamic") {
                     setDedicated(false);
                     setDynamic(true);
-                    setLogic(false);
+                    setLogicOptions(false);
                   } else if (selectedValue === "0") {
                     setDedicated(false);
                     setDynamic(false);
-                    setLogic(true);
+                    setLogicOptions(true);
                   }
                 }}
               >
                 <option value="0">Select Logic</option>
-                <option value="1">Dedicated</option>
-                <option value="2">Dynamic</option>
+                <option value="dedicated">Dedicated</option>
+                <option value="dynamic">Dynamic</option>
               </select>
               <svg
                 width="12"
@@ -188,6 +277,22 @@ function NewRoute({ close }) {
               </div>
             </div>
           )}
+
+          <div className="btn">
+            <button style={{ border: "1px solid #464F6029", color: "#464F60" }}>
+              Cancel
+            </button>
+            <button
+              onClick={SaveHandler}
+              style={{
+                backgroundColor: "#5E5ADB",
+                border: "none",
+                color: "white",
+              }}
+            >
+              Save
+            </button>
+          </div>
         </div>
       </div>
     </Head>
@@ -196,6 +301,20 @@ function NewRoute({ close }) {
 
 export default NewRoute;
 const Head = styled.div`
+  .btn {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+  .btn button {
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    letter-spacing: 2%;
+    line-height: 20px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
   .addnetwork {
     display: flex;
     align-items: center;
@@ -219,7 +338,7 @@ const Head = styled.div`
     border-radius: 7px;
     cursor: pointer;
     padding: 10px;
-    width: 28%;
+    width: 40%;
     text-align: center;
   }
   .colored {

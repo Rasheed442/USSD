@@ -2,6 +2,7 @@
     position: relative;
     /* background-color: red; */
     display: flex;
+    justify-content: center;
     height: 100%;
 }
 .title{
@@ -22,4 +23,5 @@
 .main{
     display: flex;
     padding-left: -10px;
+        justify-content: center;
 }

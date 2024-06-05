@@ -18,7 +18,20 @@
     box-shadow: 0px 0px 20px 0px #A2A0A040;
     border-radius: 20px;
             width: 35vw;
+            height: 50vw;
+            overflow-y: hidden;
+            overflow-y: scroll;
+            
 }
+  .header::-webkit-scrollbar {
+      width: 2px !important;
+      height: 2px !important;
+  }
+
+  .header::-webkit-scrollbar-track {
+      background-color: #e4e4e4;
+      border-radius: 100px;
+  }
 .header img{
     display: flex;
     justify-content: center;
@@ -70,6 +83,10 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+.info input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 .info label{
     font-size: 14px;
@@ -138,10 +155,16 @@ font-size: 14px;
     color: white;
     cursor: pointer;
 }
+.routes{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
 .forgotpass{
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 .forgotpass p{
     color: #007BFF;

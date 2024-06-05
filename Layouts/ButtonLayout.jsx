@@ -1,6 +1,8 @@
 import React from "react";
 import style from "../styles/LayoutStyle/buttonLayout.module.css";
-function ButtonLayout({ placeholder, svg, onClick, styles }) {
+import PulseLoader from "react-spinners/PulseLoader";
+
+function ButtonLayout({ placeholder, svg, onClick, styles, loading }) {
   return (
     <div className={style.btn}>
       <button style={styles} onClick={onClick}>
@@ -20,7 +22,7 @@ function ButtonLayout({ placeholder, svg, onClick, styles }) {
           />
         </svg>
 
-        {placeholder}
+        {loading ? <PulseLoader color="white" size={20} /> : placeholder}
       </button>
     </div>
   );

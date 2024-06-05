@@ -1,11 +1,85 @@
 import DashbaordLayout from "@/Layouts/DashbaordLayout";
 import AdminHeader from "@/component/AdminHeader";
-import React from "react";
+import { config, token } from "@/component/Authorization";
+import CreateBlackList from "@/component/BlackList/CreateBlackList";
+import Axios from "axios";
+import React, { useState, useEffect } from "react";
+import {
+  AiOutlineLeft,
+  AiOutlinePlus,
+  AiOutlineRight,
+  AiOutlineSearch,
+} from "react-icons/ai";
 import styled from "styled-components";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import { Dropdown } from "rsuite";
+import "rsuite/dist/rsuite.min.css";
+import { BiDotsVerticalRounded } from "react-icons/bi";
+import UpdateBlackList from "@/component/BlackList/UpdateBlackList";
+import UploadCsv from "@/component/BlackList/UploadCsv";
 
 function blacklistmgt() {
+  const [createList, setCreateList] = useState(false);
+  const [blacklist, setBlackList] = useState();
+  const [refresh, setRefresh] = useState(false);
+  const [loading, setLoading] = useState();
+  const [updateBlackList, setUpdateBlackList] = useState(false);
+  const [uploadMobileNumber, setUploadMobileNumber] = useState(false);
+  const [dataID, setDataId] = useState();
+  useEffect(() => {
+    setLoading(true);
+    Axios.get(
+      `${process.env.NEXT_PUBLIC_API}blacklist/getBlacklists/?page=1&limit=10`,
+      config
+    )
+      .then((response) => {
+        setBlackList(response?.data?.data);
+        console.log(response?.data?.data);
+        setLoading(false);
+      })
+      .catch((error) => {});
+  }, [refresh]);
+
+  async function HandleClick(d) {
+    try {
+      //   setLoading(true);
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API}blacklist/deleteBlacklist/${d?.id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      const server = await response.json();
+      console.log(server);
+      if (server?.status === true) {
+        toast.success(server?.message);
+        // window.location.pathname = "/shortcode";
+        setLoading(false);
+      } else if (server?.status === false) {
+        toast.error(server?.message);
+        setLoading(false);
+      }
+    } catch (error) {
+      console.log(error);
+      //   setLoading(false);
+    }
+    setRefresh((prev) => !prev);
+  }
   return (
     <Headings>
+      {createList && (
+        <CreateBlackList closeList={setCreateList} setRefresh={setRefresh} />
+      )}
+      {updateBlackList && (
+        <UpdateBlackList closeBlackList={setUpdateBlackList} dataID={dataID} />
+      )}
+      {uploadMobileNumber && <UploadCsv closeUpload={setUploadMobileNumber} />}
       <DashbaordLayout>
         <AdminHeader title="Blacklist Management" />
         <div className="bg">
@@ -17,7 +91,7 @@ function blacklistmgt() {
           </div>
           <div className="btn">
             <button
-              onClick={() => setCreateUser(true)}
+              onClick={() => setUploadMobileNumber(true)}
               style={{
                 backgroundColor: "white",
                 border: "1px solid gainsboro",
@@ -41,27 +115,83 @@ function blacklistmgt() {
               </svg>
               Upload mobile numbers
             </button>
-            <button onClick={() => setCreateUser(true)}>
-              <svg
-                width="19"
-                height="18"
-                viewBox="0 0 19 18"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M10.4 6.3C10.4 5.80294 9.99706 5.4 9.5 5.4C9.00294 5.4 8.6 5.80294 8.6 6.3V8.1H6.8C6.30294 8.1 5.9 8.50294 5.9 9C5.9 9.49706 6.30294 9.9 6.8 9.9H8.6V11.7C8.6 12.1971 9.00294 12.6 9.5 12.6C9.99706 12.6 10.4 12.1971 10.4 11.7V9.9H12.2C12.6971 9.9 13.1 9.49706 13.1 9C13.1 8.50294 12.6971 8.1 12.2 8.1H10.4V6.3Z"
-                  fill="white"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M9.5 0C4.52944 0 0.5 4.02944 0.5 9C0.5 13.9706 4.52944 18 9.5 18C14.4706 18 18.5 13.9706 18.5 9C18.5 4.02944 14.4706 0 9.5 0ZM2.3 9C2.3 5.02355 5.52355 1.8 9.5 1.8C13.4764 1.8 16.7 5.02355 16.7 9C16.7 12.9764 13.4764 16.2 9.5 16.2C5.52355 16.2 2.3 12.9764 2.3 9Z"
-                  fill="white"
-                />
-              </svg>
-              New Database
+            <button onClick={() => setCreateList(true)}>
+              <AiOutlinePlus />
+              Create Blacklist
             </button>
+          </div>
+        </div>
+        <div className="tablecontent">
+          <div className="search">
+            <AiOutlineSearch size={20} />
+            <input
+              type="text"
+              placeholder="Search"
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
+          {loading && <Skeleton count={5} width="" height="11vh" />}
+          {loading ? (
+            ""
+          ) : (
+            <div className="gridoutside">
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>NAME </th>
+                    <th>PHONENUMBER</th>
+                    <th>CREATED AT </th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  {blacklist?.map((d) => {
+                    return (
+                      <tr>
+                        <td>{d?.id}</td>
+                        <td>{d?.name}</td>
+                        <td>{d?.phoneNumber}</td>
+                        <td>{d?.createdAt}</td>
+                        <td>
+                          <Dropdown title={<BiDotsVerticalRounded size={20} />}>
+                            <Dropdown.Item onClick={() => HandleClick(d)}>
+                              Delete Blacklist
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                              onClick={() => {
+                                setUpdateBlackList(true);
+                                setDataId(d?.id);
+                              }}
+                            >
+                              Update Blacklist
+                            </Dropdown.Item>
+                          </Dropdown>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          )}
+          <div className="row">
+            <span>Showing 1-5 of entries</span>
+            <div className="pagins">
+              <p>Rows per page:</p>
+              <select>
+                <option>10</option>
+              </select>
+              <div className="arrow">
+                <button>
+                  <AiOutlineLeft />
+                </button>
+                <button>1</button>
+                <button>
+                  <AiOutlineRight />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </DashbaordLayout>
@@ -71,6 +201,112 @@ function blacklistmgt() {
 
 export default blacklistmgt;
 const Headings = styled.div`
+  .table {
+    border-collapse: collapse;
+    font-size: 11.5px;
+    width: 100%;
+  }
+
+  .table th {
+    font-weight: 400;
+    text-align: left;
+    font-size: 11px;
+    padding: 15px;
+    color: #687182;
+    background-color: #f9fafb;
+  }
+
+  /* .table tr:nth-child(odd) {
+    background-color: #f6f6f6;
+} */
+
+  .table td {
+    padding: 18px;
+    font-weight: 500;
+    font-size: 11px;
+    border-top: 1px solid gainsboro;
+    text-transform: uppercase;
+    color: #5a6376;
+    line-height: 20px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  .table span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #667085;
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+  }
+
+  .row span {
+    font-size: 13px;
+    color: #687182;
+  }
+
+  .pagins {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+  }
+
+  .pagins p {
+    font-size: 14px;
+    color: #687182;
+  }
+
+  .pagins select {
+    width: 48px;
+    height: 24px;
+    background-color: transparent;
+    border: 1px solid gainsboro;
+    padding: 2px;
+    border-radius: 3px;
+  }
+
+  .arrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .arrow button {
+    width: 28.8px;
+    height: 24px;
+    background-color: transparent;
+    border: 1px solid gainsboro;
+    border-radius: 3px;
+  }
+  .search {
+    display: flex;
+    border: 1px solid gainsboro;
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+    gap: 5px;
+    margin: 20px;
+    width: 30vw;
+    font-size: 15px;
+    color: #999999;
+    border-radius: 5px;
+  }
+  .search ::placeholder {
+    color: #999999;
+    font-size: 15px;
+  }
+  .search input {
+    border: none;
+    width: 100%;
+    height: 20px;
+    outline: none;
+  }
+  .tablecontent {
+    background-color: white;
+    margin: 20px;
+    padding-top: 10px;
+  }
   .bg {
     display: flex;
     justify-content: space-between;
@@ -86,13 +322,14 @@ const Headings = styled.div`
     background-color: #5e5adb;
     color: white;
     border: none;
-    border-radius: 6px;
-    padding: 8px;
+    border-radius: 4px;
+    padding: 10px;
     display: flex;
+    font-weight: 200;
     justify-content: center;
     font-size: 15px;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
   }
   .head {
     display: flex;
@@ -123,6 +360,6 @@ const Headings = styled.div`
   .container p {
     color: #848d87;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 300;
   }
 `;

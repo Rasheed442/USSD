@@ -1,13 +1,22 @@
 import DashbaordLayout from "@/Layouts/DashbaordLayout";
 import AdminHeader from "@/component/AdminHeader";
 import style from "../styles/PagesStyle/manageroute.module.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { TiArrowUnsorted } from "react-icons/ti";
-
+import Axios from "axios";
 import { AiOutlineSearch } from "react-icons/ai";
 import NewRoute from "@/component/NewRoute";
+import { config } from "@/component/Authorization";
 function manageRoute() {
   const [route, setRoute] = useState(false);
+
+  useEffect(() => {
+    Axios.get(`${process.env.NEXT_PUBLIC_API}route/getRoutes/`, config)
+      .then((response) => {
+        console.log(response?.data);
+      })
+      .catch((error) => {});
+  }, []);
   return (
     <DashbaordLayout>
       <AdminHeader title="Manage Route" />
